@@ -1,0 +1,38 @@
+.container {
+  &:after,
+  &:before {
+    content: '';
+    display: block;
+    clear: both;
+  }
+
+  &.fluid {
+    max-width: 100%;
+  }
+
+  margin: 0 auto;
+  width: 100%;
+
+  &:not(.no-padding-x) {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  &:not(.fluid) {
+    @include sm {
+      max-width: map-get($container, sm);
+    }
+
+    @include md {
+      max-width: map-get($container, md);
+    }
+
+    @include lg {
+      max-width: map-get($container, lg);
+    }
+
+    @include xl {
+      max-width: map-get($container, xl);
+    }
+  }
+}

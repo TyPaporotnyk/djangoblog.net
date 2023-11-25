@@ -335,4 +335,5 @@ vendors.min.js.map
 
 .idea
 media
-*.sqlite3 
+*.sqlite3
+app/static/*

@@ -1,46 +1,46 @@
-{% load static wagtailcore_tags wagtailuserbar %}
+{% load static wagtailcore_tags wagtailuserbar mix meta i18n %}
 
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <title>
-            {% block title %}
-            {% if page.seo_title %}{{ page.seo_title }}{% else %}{{ page.title }}{% endif %}
-            {% endblock %}
-            {% block title_suffix %}
-            {% wagtail_site as current_site %}
-            {% if current_site and current_site.site_name %}- {{ current_site.site_name }}{% endif %}
-            {% endblock %}
-        </title>
-        {% if page.search_description %}
-        <meta name="description" content="{{ page.search_description }}" />
+<html class="no-js" lang="{{ lang }}" {% meta_namespaces_schemaorg %}>
+  <head {% meta_namespaces %}>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+      {% block title %}
+        {% if page.seo_title %}
+          {{ page.seo_title }}
+        {% else %}
+          {{ page.title }}
         {% endif %}
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-        {# Force all links in the live preview panel to be opened in a new tab #}
-        {% if request.in_preview_panel %}
-        <base target="_blank">
-        {% endif %}
-
-        {# Global stylesheets #}
-        <link rel="stylesheet" type="text/css" href="{% static 'css/app.css' %}">
-
-        {% block extra_css %}
-        {# Override this in templates to add extra stylesheets #}
-        {% endblock %}
-    </head>
-
-    <body class="{% block body_class %}{% endblock %}">
-        {% wagtailuserbar %}
-
-        {% block content %}{% endblock %}
-
-        {# Global javascript #}
-        <script type="text/javascript" src="{% static 'js/app.js' %}"></script>
-
-        {% block extra_js %}
-        {# Override this in templates to add extra javascript #}
-        {% endblock %}
-    </body>
+      {% endblock title %}
+      {% block title_suffix %}
+        {% wagtail_site as current_site %}
+        {% if current_site and current_site.site_name %}- {{ current_site.site_name }}{% endif %}
+      {% endblock title_suffix %}
+    </title>
+    {% include 'meta/meta.html' %}
+    <link rel="stylesheet" href="{% mix 'css/main.css' 'app/static' %}" />
+  </head>
+  <body class="{% block body_class %}{% endblock body_class %}">
+    {% wagtailuserbar %}
+    <div id="page" class="page">
+      <header id="header" class="header">
+        <div class="container">HEADER</div>
+      </header>
+      <div class="container">
+        <div class="page__content">
+          <main id="main" class="main">
+            {% block content %}
+            {% endblock content %}
+          </main>
+        </div>
+      </div>
+      <footer id="footer" class="footer">
+        <div class="container">FOOTER</div>
+      </footer>
+    </div>
+    <script src="{% mix 'js/manifest.js' 'app/static' %}"></script>
+    <script src="{% mix 'js/vendor.js' 'app/static' %}"></script>
+    <script src="{% mix 'js/main.js' 'app/static' %}"></script>
+  </body>
 </html>
