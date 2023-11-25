@@ -1,8 +1,8 @@
-{% load static wagtailcore_tags wagtailuserbar mix meta i18n %}
+{% load static wagtailcore_tags wagtailuserbar wagtailmetadata_tags mix i18n %}
 
 <!DOCTYPE html>
-<html class="no-js" lang="{{ lang }}" {% meta_namespaces_schemaorg %}>
-  <head {% meta_namespaces %}>
+<html class="no-js" lang="en">
+  <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>
@@ -18,7 +18,8 @@
         {% if current_site and current_site.site_name %}- {{ current_site.site_name }}{% endif %}
       {% endblock title_suffix %}
     </title>
-    {% include 'meta/meta.html' %}
+    {% meta_tags %}
+    {% include 'components/favicons.html' %}
     <link rel="stylesheet" href="{% mix 'css/main.css' 'app/static' %}" />
   </head>
   <body class="{% block body_class %}{% endblock body_class %}">

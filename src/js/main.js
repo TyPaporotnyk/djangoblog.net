@@ -1,7 +1,5 @@
 $(function () {
-  function sendTestMessage() {
-    console.log('Test Message');
-  }
-
-  document.addEventListener('click', sendTestMessage);
+  $('.page').click(function (event) {
+    console.log('Test message');
+  });
 });
