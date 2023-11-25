@@ -1,9 +1,80 @@
+anyascii==0.3.2
+asgiref==3.7.2
+astroid==2.15.8
+beautifulsoup4==4.9.3
+black==23.9.1
+certifi==2023.11.17
+cfgv==3.4.0
+charset-normalizer==3.3.2
+click==8.1.7
+colorama==0.4.6
+coverage==7.3.1
+cssbeautifier==1.14.11
+defusedxml==0.7.1
+dill==0.3.7
+distlib==0.3.7
 Django==4.2.7
+django-filter==23.4
+django-meta==2.4.0
+django-modelcluster==6.1
+django-permissionedforms==0.1
+django-taggit==4.0.0
+django-treebeard==4.7
+djangomix==1.1.3
+djangorestframework==3.14.0
+djlint==1.34.0
+draftjs-exporter==2.1.7
+EditorConfig==0.12.3
+et-xmlfile==1.1.0
+filelock==3.13.1
+filetype==1.2.0
+flake8==6.1.0
+flake8-isort==6.1.0
+html-tag-names==0.1.2
+html-void-elements==0.1.0
+html5lib==1.1
+identify==2.5.32
+idna==3.5
+isort==5.12.0
+jsbeautifier==1.14.11
+json5==0.9.14
+l18n==2021.3
+lazy-object-proxy==1.9.0
+mccabe==0.7.0
+mypy-extensions==1.0.0
+nodeenv==1.8.0
+openpyxl==3.1.2
+packaging==23.2
+pathspec==0.11.2
+Pillow==9.5.0
+pillow-heif==0.13.1
+platformdirs==4.0.0
+pre-commit==3.4.0
+pycodestyle==2.11.1
+pyflakes==3.1.0
+pylint==2.17.7
+pylint-django==2.5.3
+pylint-plugin-utils==0.8.2
+pytz==2023.3.post1
+PyYAML==6.0.1
+regex==2023.10.3
+requests==2.31.0
+six==1.16.0
+soupsieve==2.5
+sqlparse==0.4.4
+tablib==3.5.0
+telepath==0.3.1
+tomli==2.0.1
+tomlkit==0.12.3
+tqdm==4.66.1
+typing_extensions==4.8.0
+urllib3==2.1.0
+virtualenv==20.24.7
 wagtail==5.2.1
-flake8==6.1.0  # https://github.com/PyCQA/flake8
-flake8-isort==6.1.0  # https://github.com/gforcada/flake8-isort
-coverage==7.3.1  # https://github.com/nedbat/coveragepy
-black==23.9.1  # https://github.com/psf/black
-djlint==1.34.0  # https://github.com/Riverside-Healthcare/djLint
-pylint-django==2.5.3  # https://github.com/PyCQA/pylint-django
-pre-commit==3.4.0  # https://github.com/pre-commit/pre-commit
+wagtail-metadata==5.0.0
+webencodings==0.5.1
+Willow==1.6.2
+wrapt==1.16.0
+xlrd==2.0.1
+XlsxWriter==3.1.9
+xlwt==1.3.0
